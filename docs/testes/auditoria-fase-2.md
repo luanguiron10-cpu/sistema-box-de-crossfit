@@ -47,3 +47,18 @@ Pesquisa pública do Next Fit não foi reexecutada nesta fase. Sua consolidaçã
 5. Implementar e executar testes de isolamento, autorização e domínio em fase futura antes de concluir funcionalidades.
 
 O auditor não executou commit, push, SQL ou publicação. Alterações posteriores a esta revisão exigem verificação proporcional.
+
+## Adendo — conferência Git local
+
+Após os dois commits iniciais, o auditor verificou diretamente:
+
+- Branch atual: `setup/documentacao-inicial`.
+- Origin de fetch e push: `https://github.com/luanguiron10-cpu/sistema-box-de-crossfit.git`, sem credencial na URL.
+- Histórico local: `0fcfcb7` (governança e instruções) e `76efccc` (análise e documentação permanente).
+- 47 arquivos rastreados; `git status --short` e `git status --porcelain=v1` sem saída, árvore limpa nesse instante.
+- Nova execução do verificador: **PASSOU**, 47 arquivos, 37 Markdown, 58 links, cinco TOMLs, zero sinais de segredo.
+- `git diff --check HEAD` sem saída para a árvore de trabalho; isso não é uma certificação de whitespace do histórico.
+
+O coordenador também informou `git fsck --full` com exit code 0, sem saída. Na preparação do primeiro commit, seu `git diff --cached --check` detectou whitespace preexistente na linha 14 de GUIA-INSTALACAO-E-TESTES.md. O arquivo foi preservado byte a byte; esse achado não altera requisitos nem expõe segredo. O commit documental não apresentou esse achado. O auditor não repetiu fsck nem a verificação do índice inicial.
+
+Resultado Git local: **PASSOU com ressalva legada de whitespace**. O proprietário autorizou o fluxo oficial de autenticação Git e envio da branch; conforme informado pelo coordenador, o login pelo navegador estava pendente neste adendo. **Push e SHA remoto continuam não comprovados aqui**. O estado posterior deve constar no registro de integração; nenhum merge, alteração de main ou deploy é autorizado por este adendo.
