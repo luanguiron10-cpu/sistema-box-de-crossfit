@@ -60,4 +60,61 @@ Durante o staging do segundo commit, `git diff --cached --check` detectou CRLF i
 
 ## Registro Git e encerramento
 
-O envio autorizado fica limitado à branch `arquitetura/instalacoes-independentes` no repositório privado confirmado. Não criar PR/merge, tag de release ou gatilho de publicação por inferência. Os commits e a confirmação remota serão anotados após auditoria e verificação do SHA; não considerar push realizado com base apenas no commit local.
+O envio autorizado ficou limitado à branch `arquitetura/instalacoes-independentes` no repositório privado confirmado. Não foi criado PR/merge, tag de release ou gatilho de publicação. O registro a seguir supera o estado pré-commit da auditoria inicial.
+
+### Commits e confirmação remota
+
+- `9386434`: ADR-009, governança, arquitetura, dados/segurança, operação e comercial.
+- `9f5516b`: requisitos, backlog, manuais, histórico, critérios e cinco revisões independentes.
+- Push da branch com upstream: exit 0. API autenticada GitHub retornou `9f5516b9a0569f88846410e1489c1f1c4c192161`, igual ao HEAD local verificado pelo coordenador.
+- A branch anterior `setup/documentacao-inicial` permaneceu em `01405f250e5f8556bd23a6d08ec44a68d33c59a7`, conforme a mesma consulta API.
+- Um commit final inclui este comprovante e o adendo auditório; seu SHA não pode constar antecipadamente no próprio documento. O relatório de encerramento na conversa compara também esse último SHA com o remoto.
+- `git fsck --full`: exit 0, com dois blobs não alcançáveis transitórios após staging. Não houve indicação de corrupção, remoção desses objetos ou reescrita de histórico.
+
+Branch: https://github.com/luanguiron10-cpu/sistema-box-de-crossfit/tree/arquitetura/instalacoes-independentes
+
+### Inventário de alterações contra a base
+
+25 arquivos modificados (M), dez adicionados (A), nenhum excluído. Somente Markdown foi alterado nesta fase; os arquivos de configuração dos agentes e o script existente permanecem intactos.
+
+```text
+M	AGENTS.md
+M	README.md
+M	docs/README.md
+M	docs/arquitetura/README.md
+A	docs/arquitetura/adr-009-instalacoes-independentes.md
+M	docs/arquitetura/decisoes-propostas.md
+M	docs/banco-de-dados/README.md
+M	docs/banco-de-dados/modelo-conceitual-e-seguranca.md
+M	docs/comercial/README.md
+M	docs/desenvolvimento/README.md
+M	docs/desenvolvimento/backlog.md
+M	docs/desenvolvimento/modelo-funcionalidade.md
+M	docs/desenvolvimento/politica-documentacao.md
+M	docs/fase-1/fluxos.md
+M	docs/fase-1/fontes.md
+M	docs/fase-1/matriz-funcionalidades.md
+M	docs/fase-1/regras-crossfit.md
+M	docs/fase-1/relatorio-analise.md
+M	docs/historico/CHANGELOG.md
+M	docs/historico/README.md
+A	docs/historico/fase-3.md
+M	docs/implantacao/README.md
+A	docs/implantacao/checklist-novo-box.md
+A	docs/implantacao/distribuicao-atualizacao-rollback.md
+M	docs/manuais/README.md
+M	docs/manuais/aluno.md
+M	docs/manuais/gestor.md
+M	docs/manuais/professor.md
+M	docs/testes/README.md
+A	docs/testes/auditoria-fase-3.md
+A	docs/testes/criterios-reproducao-instalacao.md
+A	docs/testes/pareceres-fase-3/arquiteto.md
+A	docs/testes/pareceres-fase-3/desenvolvedor.md
+A	docs/testes/pareceres-fase-3/engenharia_reversa.md
+A	docs/testes/pareceres-fase-3/especialista_crossfit.md
+```
+
+### Próximas etapas e limites
+
+Definir custos por instalação/ambiente e titularidade das contas; aprovar políticas de negócio, RPO/RTO, retenção e versões suportadas; depois autorizar separadamente o início da implementação. Nenhum projeto, ambiente, migration, seed ou release foi criado/executado nesta fase. A matriz R01–R14 permanece NÃO EXECUTADA até infraestrutura de teste e aplicação existirem e forem autorizadas.

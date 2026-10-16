@@ -70,3 +70,13 @@ O verificador examina links inline relativos por existência, contagem/chave mí
 A correção de precisão sobre revogação, PR avulso, RF-CF-14 e ranking é documental. Testes correspondentes continuam NÃO EXECUTADOS. Não confundir pareceres de agentes com certificação independente externa ou garantia de segurança.
 
 Repetição final após conclusão dos quatro pareceres e links deste relatório: **PASSOU**, exit 0; 57 arquivos, 47 Markdown, 118 links locais, cinco TOMLs, zero arquivos com sinais de segredo. git diff --check global também sem saída/exit 0. As contagens anteriores acima são evidências cronológicas, não resultados da aplicação.
+
+## Adendo — commits e envio remoto
+
+O auditor conferiu diretamente branch arquitetura/instalacoes-independentes, árvore limpa antes deste adendo, os commits 9386434 (ADR/arquitetura/operação) e 9f5516b (requisitos/backlog/manuais/auditoria), e HEAD 9f5516b9a0569f88846410e1489c1f1c4c192161. Leu também os refinamentos finais do modelo de funcionalidade (itens 3/7) e o aviso antes da tabela histórica do backlog. Nova execução própria do verificador: PASSOU, exit 0, 57 arquivos, 47 Markdown, 118 links locais, cinco TOMLs, zero sinais parciais de segredo. git diff --check 01405f2 HEAD sem saída.
+
+O coordenador informou push -u origin arquitetura/instalacoes-independentes concluído com exit 0 e consulta autenticada à API de branches confirmando SHA remoto 9f5516b9a0569f88846410e1489c1f1c4c192161, igual ao HEAD local verificado pelo auditor. A branch base setup/documentacao-inicial permaneceu em 01405f250e5f8556bd23a6d08ec44a68d33c59a7. A consulta remota não foi repetida pelo auditor. Resultado: envio comprovado até esse SHA pela evidência do coordenador e conferência local independente.
+
+O coordenador também registrou falha inicial do check staged (exit 2) em duas linhas CRLF de parecer novo ainda não rastreado; commit interrompido, normalização LF e nova verificação do índice aprovada. A verificação de trabalho anterior não cobria esses arquivos untracked. Informou git fsck --full exit 0 com dois dangling blobs transitórios de staging, sem corrupção; não houve limpeza ou exclusão desses objetos. O auditor não repetiu fsck.
+
+Este adendo exige commit posterior e terá outro SHA: não certifica antecipadamente seu próprio envio. O histórico da Fase 3 deve registrar a confirmação posterior. Nenhum PR, merge, release, deploy, infraestrutura ou migration foi realizado conforme registro do coordenador. Testes operacionais e de aplicação permanecem NÃO EXECUTADOS.
