@@ -62,3 +62,11 @@ Após os dois commits iniciais, o auditor verificou diretamente:
 O coordenador também informou `git fsck --full` com exit code 0, sem saída. Na preparação do primeiro commit, seu `git diff --cached --check` detectou whitespace preexistente na linha 14 de GUIA-INSTALACAO-E-TESTES.md. O arquivo foi preservado byte a byte; esse achado não altera requisitos nem expõe segredo. O commit documental não apresentou esse achado. O auditor não repetiu fsck nem a verificação do índice inicial.
 
 Resultado Git local: **PASSOU com ressalva legada de whitespace**. O proprietário autorizou o fluxo oficial de autenticação Git e envio da branch; conforme informado pelo coordenador, o login pelo navegador estava pendente neste adendo. **Push e SHA remoto continuam não comprovados aqui**. O estado posterior deve constar no registro de integração; nenhum merge, alteração de main ou deploy é autorizado por este adendo.
+
+## Adendo final — envio remoto comprovado
+
+O estado de autenticação e envio acima foi superado: o coordenador informou conclusão do login oficial autorizado com exit code 0; consulta Git autenticada inicialmente retornou remoto vazio. Em seguida, `git push -u origin setup/documentacao-inicial` concluiu com exit code 0. A consulta autenticada do coordenador à API de branches retornou somente `setup/documentacao-inicial`, apontando para **`16a8c81a2437d07fb5575ddae76a9a08ba35268b`**.
+
+O auditor verificou diretamente esse mesmo SHA no HEAD local, a branch correta e `git status --short` sem saída antes deste adendo. A evidência remota foi fornecida pelo coordenador; não foi repetida pelo auditor.
+
+Resultado: **PASSOU — envio comprovado até o SHA acima**. O commit posterior contendo este registro terá outro SHA, que deve ser conferido no histórico e no registro de integração após o envio final. Este texto não atesta antecipadamente o próprio commit. Não houve merge, criação de main ou deploy relatado; main não existia no remoto vazio. Testes de aplicação e banco permanecem NÃO EXECUTADOS.
