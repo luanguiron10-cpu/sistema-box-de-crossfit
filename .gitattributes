@@ -1,0 +1,2 @@
+# Preservar bytes anteriores e evitar normalização implícita no primeiro commit.
+* -text

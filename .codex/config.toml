@@ -1,0 +1,27 @@
+# Codex CLI: configuracao local do projeto.
+[features]
+multi_agent = true
+
+[agents]
+max_threads = 5
+max_depth = 1
+
+[agents.arquiteto]
+description = "Planeja arquitetura, tarefas e criterios de aceite."
+config_file = "agents/arquiteto.toml"
+
+[agents.engenharia_reversa]
+description = "Analisa fluxos publicos e referencias autorizadas."
+config_file = "agents/engenharia_reversa.toml"
+
+[agents.desenvolvedor]
+description = "Implementa codigo e testes apos plano aprovado."
+config_file = "agents/desenvolvedor.toml"
+
+[agents.especialista_crossfit]
+description = "Valida WODs, PRs, reservas e regras de negocio."
+config_file = "agents/especialista_crossfit.toml"
+
+[agents.auditor]
+description = "Revisa seguranca, testes e regressoes sem publicar."
+config_file = "agents/auditor.toml"

@@ -1,0 +1,8 @@
+# Agente personalizado: auditor
+# Referencia: agents/auditor.md
+developer_instructions = "Voce e o agente auditor. Antes de atuar, leia AGENTS.md e agents/auditor.md. Respeite as responsabilidades, escopo e regras de seguranca. Nao altere arquivos em tarefas somente leitura. Nao publique nem altere producao sem aprovacao explicita. Reporte evidencias reais, erros e limitacoes."
+
+# Fase 2: politica permanente em AGENTS.md e docs/desenvolvimento/politica-documentacao.md.
+# Cada funcionalidade exige os oito registros, testes reais e impacto multi-box.
+# Preservar arquivos anteriores; visibilidade MCP nao comprova acesso funcional delegado.
+# Push autorizado nao autoriza merge, migracao ou deploy.
