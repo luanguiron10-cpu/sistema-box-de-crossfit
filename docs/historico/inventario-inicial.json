@@ -1,0 +1,86 @@
+{
+  "data": "2026-10-16",
+  "descricao": "16 arquivos locais antes da Fase 2; caminhos relativos e hashes SHA256. Git local inexistente.",
+  "arquivos": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "283D0D042747A683CE65731B8C8D4733CD8D23D4002BB14F17954294C39BE328",
+      "length": 2556
+    },
+    {
+      "path": "GUIA-INSTALACAO-E-TESTES.md",
+      "sha256": "E8571535FA30ED8E35EEAF7898F39D4C62FD8B6B549685119A9B315204408BFE",
+      "length": 2421
+    },
+    {
+      "path": "LEIA-ME-PRIMEIRO.md",
+      "sha256": "71A936C63BC5F6354506311539929FF226F51FDA5D39C78EA386527552D9C6DE",
+      "length": 1263
+    },
+    {
+      "path": ".codex\\config.toml",
+      "sha256": "A220701F8095C4AEF3FE6D28607E0EE2E29E39D18865196A4EAFD470ABB99914",
+      "length": 781
+    },
+    {
+      "path": ".codex\\agents\\arquiteto.toml",
+      "sha256": "C83728DEECC0E7762245443602B336FFDB4DE64A4B4302256CF3A9C358F70281",
+      "length": 389
+    },
+    {
+      "path": ".codex\\agents\\auditor.toml",
+      "sha256": "C5C53190CBB513FC01052AFEE2C575E2A16014266045084E102FC2B399AEC505",
+      "length": 381
+    },
+    {
+      "path": ".codex\\agents\\desenvolvedor.toml",
+      "sha256": "9257A8C58605F6B0B0A3D7A9EF97D53A32A9EE9892D30C5A1394F91BE3173FF8",
+      "length": 405
+    },
+    {
+      "path": ".codex\\agents\\engenharia_reversa.toml",
+      "sha256": "C55BE8C2BA833C380ADC8512C4643C6CB501E720E666621CD193E8A7D8B60C63",
+      "length": 425
+    },
+    {
+      "path": ".codex\\agents\\especialista_crossfit.toml",
+      "sha256": "0D2C485B8B43727B0FE84F4B3E3ECD4D99AD09CF212FD7F93CF6F360139FAFB5",
+      "length": 437
+    },
+    {
+      "path": "agents\\arquiteto.md",
+      "sha256": "33E5175215A300D3B7F8077CC1007CB4BBB76C5EA2B9CFA4CE7D6E948CD239D6",
+      "length": 655
+    },
+    {
+      "path": "agents\\auditor.md",
+      "sha256": "B483283E7DF40A6A23F7A415BAB9C3BFCB909F2FF16E8C422E63BE32C136AB99",
+      "length": 705
+    },
+    {
+      "path": "agents\\desenvolvedor.md",
+      "sha256": "25622D054B3C3B5C9410587D58EDD46D4D3997A6D3C383C3900CD9B214F77CF7",
+      "length": 749
+    },
+    {
+      "path": "agents\\engenharia-reversa.md",
+      "sha256": "5E4159F3244772DCD0452EF21C7CD0FAB668E16CAC20D24363432CD4223EEB4A",
+      "length": 866
+    },
+    {
+      "path": "agents\\especialista-crossfit.md",
+      "sha256": "008818DB0A79A78C043E699B3503D6CC3BD73A318CBFA9C809906764AB9AE004",
+      "length": 624
+    },
+    {
+      "path": "docs\\plano-de-acao.md",
+      "sha256": "0DF9CEB182AE6E63DE717B40D162E42BA317E2D8D738CCA2DF31D107E3093750",
+      "length": 574
+    },
+    {
+      "path": "docs\\roteiro-de-testes.md",
+      "sha256": "244D49E24B1B3FF02D1BD9D85164DE5EA3517D79B5CE2BBC6D7A2F1E0CA4D871",
+      "length": 1093
+    }
+  ]
+}
