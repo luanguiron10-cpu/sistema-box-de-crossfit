@@ -20,7 +20,7 @@ Construir uma plataforma original de gestão de boxes de CrossFit, com área do 
 
 ## Regras de segurança
 - Nunca expor tokens, senhas, chaves service_role ou dados pessoais nos commits, logs e respostas.
-- Supabase: usar RLS por box/tenant e por papel; não confiar em permissões apenas no frontend.
+- Supabase: cada box possui projeto e Auth próprios; usar grants e RLS por papel, titularidade e atribuição dentro da instalação. Não confiar em permissões apenas no frontend. O modelo compartilhado por tenant foi superado pela ADR-009.
 - Não modificar produção, remover dados, executar migrações destrutivas, enviar mensagens ou publicar sem aprovação explícita.
 - Não contornar login, DRM, proteções, rate limits nem coletar dados privados de sistemas terceiros.
 - Integrações Wellhub/TotalPass apenas com API e autorização oficial.
@@ -61,8 +61,16 @@ Disponibilidade de ferramenta MCP no principal não comprova acesso funcional no
 
 ## Produto e versionamento
 
-Objetivo comercial: SaaS multi-box, implantação personalizada ou licenciamento, ainda sujeitos a decisões comerciais. Desenhar isolamento por cliente e papel no backend. Nunca presumir que a documentação prova implementação de RLS, backup ou segurança.
+Objetivo comercial: serviço por assinatura, implantação personalizada ou licenciamento com instalações independentes por box, sobre um código-base central. Condições comerciais continuam pendentes. Desenhar isolamento por projeto/instalação e autorização local no backend. Nunca presumir que a documentação prova implementação de RLS, backup ou segurança.
 
 Não incluir dados pessoais reais, credenciais, dumps ou materiais proprietários nos arquivos/commits. Usar dados sintéticos. Não copiar código, identidade visual ou ativos do Next Fit. Modelo de licença e direitos de terceiros precisam de decisão própria antes da comercialização.
 
 Confirme proprietário e URL do remoto antes de associar projeto; preserve histórico remoto/local; sem force push, reescrita ou exclusão sem autorização específica. Branches de trabalho e commits revisáveis são padrão. O envio da branch explicitamente autorizado não autoriza merge, release, migração ou deploy. Não criar automação de publicação por consequência de push.
+
+## Decisão arquitetural aprovada — Fase 3 (16/10/2026)
+
+A [ADR-009](docs/arquitetura/adr-009-instalacoes-independentes.md) substitui a proposta de banco multi-tenant compartilhado: um código-base central, projeto Supabase e implantação Cloudflare exclusivos por box e por ambiente. Não existe seleção global de box, Auth central de alunos ou acesso automático entre instalações. Usuários e papéis são locais; identidade repetida em dois projetos não compartilha sessão nem autorização.
+
+Distribuir versões fixadas por tag/commit com configuração por instalação, sem forks permanentes ou branches de produto por cliente. Identidade visual e regras configuráveis não podem selecionar backend arbitrário por parâmetro do navegador. Toda atualização identifica destino, release, configuração pública, schema compatível e rollback; credenciais ficam fora do Git e do frontend.
+
+Exigir reprodução futura do zero em duas instalações sintéticas e testes de autorização internos e entre projetos. Planejar migrações versionadas, seed sintético, backup/restauração incluindo arquivos e configuração de Auth, e reversão compatível; planejamento não autoriza execução. A política dos oito registros permanece obrigatória em cada incremento e instalação.

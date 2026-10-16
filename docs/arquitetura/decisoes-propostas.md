@@ -1,6 +1,6 @@
 # Registro de decisões propostas
 
-Data: 2026-10-16. Versão documental: 0.1. Todas as ADRs abaixo estão **propostas, pendentes de aprovação técnica e validação**. Nenhuma representa infraestrutura já criada.
+Data: 2026-10-16. Versão documental: 0.2. A tabela original abaixo permanece como histórico da proposta 0.1, não como instrução atual. A ADR-009 foi ACEITA pelo proprietário; nenhuma representa infraestrutura já criada.
 
 | ADR | Contexto e decisão proposta | Alternativas e consequência | Evidência para aceite |
 | --- | --- | --- | --- |
@@ -12,6 +12,22 @@ Data: 2026-10-16. Versão documental: 0.1. Todas as ADRs abaixo estão **propost
 | 006 — Distribuição | Mesmo código, configurações por cliente; dedicado como variante operacional | Fork por cliente eleva custo de correções e divergência | Atualização de dois boxes sem regressão e inventário de customizações |
 | 007 — Entrega | Branch, revisão e CI desacoplados de deploy | Integração Pages pode iniciar builds/publicações automaticamente | Evidência de ausência de gatilho de deploy e aprovação de release |
 | 008 — Ranking/PR | Comparar prescrição, versão, unidade e regra compatíveis | Categoria genérica Scaled não assegura comparabilidade | Casos de cap, empate, unidade e repetições revisados pelo especialista |
+
+## Estados após Fase 3
+
+| ADR anterior | Estado atual | Sucessora / motivo |
+| --- | --- | --- |
+| 001 | SUPERADA integralmente | ADR-009: instalação independente, não tenant compartilhado |
+| 002 | PARCIALMENTE SUPERADA | ADR-009 altera topologia por box/ambiente; stack permanece proposta |
+| 003 | PARCIALMENTE SUPERADA | ADR-009 altera escopo para papéis/titularidade locais; RLS e grants permanecem propostos |
+| 004 | PROPOSTA preservada | Histórico de prescrição permanece necessário |
+| 005 | PROPOSTA preservada | Reserva/presença/resultado continuam independentes |
+| 006 | SUPERADA integralmente | ADR-009: dedicado é modelo principal; um código-base sem forks |
+| 007 | PARCIALMENTE SUPERADA | ADR-009 acrescenta liberação individual, versão/configuração e compatibilidade |
+| 008 | PROPOSTA preservada | Comparabilidade esportiva não muda |
+| 009 | ACEITA pelo proprietário em 16/10/2026 | [Decisão formal](adr-009-instalacoes-independentes.md); detalhes técnicos ainda dependem de implementação/testes |
+
+Texto original integral também disponível no [Git 01405f2](https://github.com/luanguiron10-cpu/sistema-box-de-crossfit/blob/01405f250e5f8556bd23a6d08ec44a68d33c59a7/docs/arquitetura/decisoes-propostas.md). Referências antigas a tenant nesta tabela são históricas.
 
 ## Processo de decisão
 

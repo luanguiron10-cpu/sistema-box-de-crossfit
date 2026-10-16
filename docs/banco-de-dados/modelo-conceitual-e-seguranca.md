@@ -1,58 +1,62 @@
 # Modelo conceitual e estratégia de autorização
 
-Estado: proposta original, versão documental 0.1, 2026-10-16. Não é esquema implementado nem garantia de isolamento. Papéis e entidades dependem de aceite.
+Estado: desenho original 0.2, 2026-10-16, subordinado à [ADR-009 aceita](../arquitetura/adr-009-instalacoes-independentes.md). Não é esquema implementado. A proposta 0.1 é preservada no [Git 01405f2](https://github.com/luanguiron10-cpu/sistema-box-de-crossfit/blob/01405f250e5f8556bd23a6d08ec44a68d33c59a7/docs/banco-de-dados/modelo-conceitual-e-seguranca.md).
 
-## Entidades e relacionamentos
+## Entidades propostas e invariantes
 
-| Domínio | Entidades propostas | Relações e invariantes |
+| Domínio | Entidades | Relações e restrições planejadas |
 | --- | --- | --- |
-| Identidade | profiles, boxes, memberships, membership_roles | Identidade global mínima; vínculo único usuário/box; papéis vinculados ao membership, revogáveis |
-| Alunos | students, plans, enrollments | Aluno do box pode ainda não ter login; vínculo com identidade é opcional e controlado; financeiro separado de identidade |
-| Agenda | class_types, schedule_templates, class_sessions | Ocorrência guarda horário, fuso aplicável, capacidade, professor e estado; cancelada não gera falta |
-| Participação | bookings, waitlist_entries, attendance_records | Um aluno/ocorrência; capacidade respeitada em concorrência; presença e reserva independentes |
-| Esporte | movements, workouts, workout_versions, workout_blocks, session_workouts | Movimentos do box ou catálogo explicitamente compartilhado; versão publicada preservada quando usada |
-| Desempenho | workout_results, result_components, movement_attempts, benchmark_versions | Resultado referencia aluno, versão e prescrição; unidade e valor originais preservados; PR é derivação auditável |
-| Acompanhamento | private_notes, audit_events, box_settings | Notas restritas e segregadas; eventos mínimos com autor e contexto; não registrar tokens ou conteúdo sensível sem necessidade |
+| Instalação | installation_settings | Singleton: exatamente uma configuração ativa; identidade opaca da instalação, ambiente, fuso, marca e políticas; sem segredo. Mudança de destino não é operação de aluno |
+| Identidade local | profiles, user_roles, staff_assignments | profiles referencia Auth deste projeto; papéis e vínculos ativos revogáveis, atribuição de professor/turma explícita; usuário não edita privilégios |
+| Alunos | students, plans, enrollments | Aluno pode não ter login; associação profile/aluno única/controlada; matrícula e financeiro não concedem papel administrativo |
+| Agenda | class_types, schedule_templates, class_sessions | Fuso, capacidade, professor/atribuições e estado por ocorrência; cancelada não gera falta |
+| Participação | bookings, waitlist_entries, attendance_records | Unicidade aluno/ocorrência; transação para vagas; reserva, presença e resultado separados |
+| Esporte | movements, workouts, workout_versions, workout_blocks, session_workouts | Catálogo local com origem/licença quando importado; versões usadas imutáveis, sem catálogo remoto compartilhado presumido |
+| Desempenho | workout_results, result_components, movement_attempts, benchmark_versions | Aluno, versão, prescrição e pontuação comparáveis; unidades originais preservadas; PR derivado auditável |
+| Acompanhamento | private_notes, audit_events | Autor, escopo de compartilhamento, necessidade e acesso explícitos; logs mínimos sem tokens ou conteúdo pessoal desnecessário |
 
-Dados de domínio incluem box_id, identificador, autoria e datas conforme necessidade. Chaves compostas ou verificação equivalente no banco devem impedir um resultado do box A referenciar aluno/turma do box B. Índices e constraints serão projetados e medidos após o esquema físico. Profiles globais não expõem diretório global de usuários: o aluno edita campos próprios permitidos; dados de equipe são acessados por projeções tenant-scoped mínimas.
+Tentativa em movement_attempts sempre referencia aluno/titular local, com WOD/resultado opcionais para permitir PR avulso. benchmark_versions descreve a definição versionada, sem titular aluno obrigatório; o desempenho individual referencia essa definição quando aplicável.
 
-## Matriz de acesso proposta
+Um box por banco. Não há box_id/tenant_id obrigatório em cada tabela, boxes/memberships globais, seletor de tenant ou Auth central. Identificadores e referências locais não autorizam acesso. Futuras unidades exigem decisão e modelo próprios. Integridade FK, unicidade, ownership e imutabilidade serão constraints físicas projetadas/testadas. Inventário comercial de instalações fica separado, sem acesso automático aos dados esportivos.
 
-Todas as permissões exigem vínculo ativo no **mesmo box** e escopo da operação. Negação é padrão. “Gerir” não inclui trocar tenant, exportar indiscriminadamente ou assumir outro usuário.
+## Matriz intrainstalação proposta
 
-| Recurso | Proprietário do box | Gestor | Professor | Recepção | Aluno |
+Todas as operações exigem identidade deste projeto, conta ativa e autorização atual. Negação por padrão; gerir não autoriza autoelevação, exportação irrestrita ou assumir outro usuário.
+
+| Recurso | Proprietário | Gestor | Professor | Recepção | Aluno |
 | --- | --- | --- | --- | --- | --- |
-| Papéis e configurações | Gerir com auditoria | Configuração operacional delegada; sem elevar privilégios | Ler necessário | Ler necessário | Ler informação pública do próprio box |
-| Cadastro/elegibilidade | Gerir | Gerir | Ler mínimo dos alunos atendidos | Gerir campos operacionais | Ler próprio; editar campos permitidos |
-| Turmas e agenda | Gerir | Gerir | Gerir atribuídas conforme delegação | Reservar/cancelar administrativamente | Ler elegíveis e reservar/cancelar para si |
-| Presença | Gerir/corrigir | Gerir/corrigir | Confirmar/corrigir turmas atribuídas | Confirmar se delegado | Ler própria |
-| WOD | Gerir | Gerir | Criar/publicar se delegado | Ler publicado necessário | Ler publicado conforme elegibilidade |
-| Resultados/PRs | Ler no box; correção auditada | Ler no box; correção auditada | Acompanhar e corrigir conforme regra | Sem acesso por padrão | Registrar/ler próprios; correção conforme janela |
-| Ranking | Ler projeção permitida | Ler projeção permitida | Ler projeção permitida | Sem acesso por padrão | Ler projeção consentida/autorizada |
-| Notas privadas | Sem acesso automático pelo cargo | Somente se autorizado e necessário | Próprias ou compartilhadas com autorização | Negado | Negado a notas internas; solicitação de dados tem fluxo próprio |
-| Financeiro administrativo | Gerir | Gerir se delegado | Negado | Operar se delegado | Ler próprios lançamentos permitidos |
-| Auditoria/exportação | Acesso específico, autenticado e registrado | Acesso específico delegado | Negado por padrão | Negado | Exportação própria por fluxo controlado |
+| Papéis/configurações | Gerir com auditoria e proteção contra perda do último proprietário | Configuração delegada, sem elevar papel | Ler mínimo | Ler mínimo | Informação pública permitida |
+| Alunos/elegibilidade | Gerir | Gerir | Mínimo de alunos atribuídos | Campos operacionais delegados | Próprio cadastro e campos editáveis |
+| Turmas/reservas | Gerir | Gerir | Atribuídas/delegadas | Operar se delegado | Elegíveis; reservar/cancelar para si |
+| Presença | Gerir/corrigir auditado | Gerir/corrigir | Turmas atribuídas | Confirmar se delegado | Ler própria |
+| WOD | Gerir | Gerir | Criar/publicar se autorizado | Publicado necessário | Publicado conforme elegibilidade |
+| Resultado/PR | Ler; corrigir auditado | Ler; corrigir auditado | Alunos/atividades atribuídos | Negado por padrão | Próprio; correção conforme janela |
+| Ranking | Projeção permitida | Projeção permitida | Projeção permitida | Negado por padrão | Projeção autorizada, sem notas privadas |
+| Notas restritas | Sem acesso automático pelo cargo | Só autorização/necessidade | Próprias/compartilhadas autorizadas | Negado | Negado a notas internas; direitos de acesso por fluxo próprio |
+| Financeiro | Gerir | Se delegado | Negado | Se delegado | Próprios registros permitidos |
+| Auditoria/exportação | Escopo específico registrado | Se delegado | Negado por padrão | Negado | Exportação própria por fluxo controlado |
 
-O operador da plataforma não recebe acesso irrestrito aos boxes como papel de aplicação. Suporte excepcional requer autorização, duração limitada e registro; definir procedimento antes de ofertar suporte com acesso a dados.
+Operador do produto não é superusuário da aplicação. Suporte exige consentimento, escopo, expiração e trilha local. A mesma pessoa em outro box precisa de identidade/vínculo local independente; sua credencial ou cargo em A não dá direitos em B.
 
-## Estratégia RLS e backend
+## RLS, grants e superfícies indiretas
 
-Proposta de avaliação: identidade válida → membership ativo do tenant da linha → papel/atribuição → operação permitida → campos/referências válidos. A alteração deve validar linha anterior e nova, impedindo mover registros para outro box ou usuário. Atualizações e leitura precisam de políticas compatíveis.
+Proposta: autenticação válida local → perfil ativo → papel/titularidade/atribuição atuais → operação/campos permitidos. Validar linha anterior e nova; impedir apropriação de student_id, autoria, role e vinculação de terceiros. Não confiar em user_metadata editável nem somente claims de papel antigas; operações sensíveis consultam estado autorizado corrente. Revogar papel/conta nega nova operação mesmo com access token anterior ainda válido. Logout/revogação de sessão não deve ser confundido com invalidação imediata de todo JWT; projetar verificação aplicável e teste real.
 
-Grants e políticas são controles distintos na documentação oficial. Para tabelas expostas, configurar ambos e RLS. Não confiar em user_metadata editável pelo usuário; consultar vínculo atual para operações sensíveis, evitando depender apenas de claims antigas. Não habilitar acesso anônimo ao domínio por conveniência.
+Configurar grants e RLS por operação em toda tabela exposta; não habilitar anônimo no domínio por conveniência. Views e relatórios devem preservar políticas; preferir privilégios do chamador quando suportado. RPC privilegiada exige search_path controlado, autorização explícita, argumentos restritos e execução mínima; não presumir que RLS protege toda função. Credenciais privilegiadas podem contornar RLS, portanto ficam apenas no backend autorizado. Storage requer bucket/políticas e ownership próprios; caminho com identificador não autoriza leitura. URLs assinadas têm validade limitada; logs/exports/notificações não podem criar vazamento lateral.
 
-Views, funções, relatórios, objetos de Storage e exports devem preservar o mesmo escopo. Preferir execução com privilégios do chamador; qualquer função privilegiada precisa de superfície restrita, autorização explícita e revisão. Credenciais administrativas ficam fora do frontend e do Git. Caminho de arquivo com box_id não substitui política de acesso.
+Reserva/cancelamento usam operação transacional; escrita direta não pode contornar capacidade, elegibilidade ou idempotência. Exclusão e retenção/anonimização exigem decisão própria, sem apagar histórico esportivo silenciosamente.
 
-Reserva usa operação transacional com validação de elegibilidade, capacidade, duplicidade e idempotência. O caminho direto de escrita não pode contornar a operação. Exclusão de aluno ou vínculo não elimina silenciosamente histórico: política de retenção e anonimização ainda precisa ser decidida.
+## Plano de testes futuros — NÃO EXECUTADOS
 
-## Testes obrigatórios futuros
+- Negação por papel, titularidade e atribuição em leitura/escrita/API direta; usuário autenticado sem perfil ativo.
+- Aluno altera student_id/autoria, recepção tenta elevar papel, professor acessa aluno não atribuído; todos negados.
+- Revogação/reativação e token anterior; vínculo login/aluno; último proprietário e suporte expirado.
+- Views, RPC, Storage, relatórios, ranking e exportação sem notas ou dados indevidos.
+- Dois projetos sintéticos: token A em B negado; credencial de mesmo e-mail sem vínculo local não concede acesso.
+- Configuração A→B bloqueada; produção indisponível a preview. Independência das atualizações e ausência de chave privilegiada no bundle.
+- Vaga concorrente, idempotência, presença corrigida; prescrição versionada, cap/unidades/empates.
+- Instalação vazia, upgrade anterior suportado, seed repetido, backup/restauração e compatibilidade rollback.
 
-- Mesmo usuário com papéis diferentes em dois boxes; tentativa por identificador de outro tenant negada.
-- Troca de box_id, autoelevação, referência cruzada, API direta e agregados negados.
-- Vínculo revogado com token anterior; aluno sem login e usuário sem vínculo.
-- Última vaga concorrente; reenvio idempotente; fila concorrente e correção de presença.
-- Views, funções, Storage, exportação e ranking sem exposição lateral de notas ou identidade.
-- Atualização que muda titular/tenant, leitura necessária ao UPDATE e deleção conforme política.
-- Versão de WOD, time cap, unidades e critérios comparáveis sem sobrescrever histórico.
+## Fontes
 
-Resultado atual: **não executados**; dependem da implementação. Base consultada: [Supabase RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), 2026-10-16. Detalhes acima são desenho próprio.
+[RLS oficial](https://supabase.com/docs/guides/database/postgres/row-level-security), [migrations](https://supabase.com/docs/guides/local-development/database-migrations) e [backups](https://supabase.com/docs/guides/platform/backups), consultados em 16/10/2026. O desenho é próprio e não constitui comprovação de controle implementado.
