@@ -24,11 +24,11 @@ A conversa registrou delegações reais por `agent_type`. Este documento preserv
 
 A documentação pública sustenta referências de cadastro, agenda, capacidade, reservas, espera, WOD, movimentos, benchmarks, resultados, evolução, contratos e perfis. Existem anúncios comerciais complementares. Isso não demonstra segurança, desempenho, isolamento de clientes ou correção dos algoritmos do fornecedor.
 
-O sistema próprio deve distinguir reserva, presença e resultado; preservar a versão da prescrição; comparar apenas desempenhos compatíveis; limitar exposição de rankings; e autorizar operações por tenant e papel. Esses são requisitos próprios, não afirmações sobre a implementação do Next Fit.
+O sistema próprio deve distinguir reserva, presença e resultado; preservar a versão da prescrição; comparar apenas desempenhos compatíveis; limitar exposição de rankings; e autorizar operações por vínculo e papel dentro da instalação. Esses são requisitos próprios, não afirmações sobre a implementação do Next Fit.
 
-## Proposta técnica preliminar — P
+## Proposta técnica preliminar — P — histórico superado pela Fase 3
 
-Frontend responsivo React/TypeScript; GitHub para histórico e revisão; Cloudflare Pages como candidato à hospedagem; Supabase Auth/Postgres/RLS para identidade e dados. São decisões preliminares documentais, sem recursos criados ou configuração de produção nesta fase. Ver documentação arquitetural da Fase 2 para decisões vigentes.
+Frontend responsivo React/TypeScript; GitHub para histórico e revisão; Cloudflare Pages como candidato à hospedagem; Supabase Auth/Postgres/RLS para identidade e dados. São decisões preliminares documentais, sem recursos criados ou configuração de produção nesta fase. Proposta compartilhada SUPERADA pela decisão do proprietário de 16/10/2026; ver [ADR009](../arquitetura/adr-009-instalacoes-independentes.md). O modelo abaixo preserva o histórico.
 
 Módulos iniciais: identidade/vínculos; alunos; agenda; reservas/presença; WOD/prescrições; resultados/PRs; acompanhamento; administração. Modelo conceitual inicial: boxes, memberships, students, class_sessions, bookings, attendance_records, workout_versions e workout_results. O isolamento multi-box exige validação no banco, não apenas filtro visual.
 
@@ -36,7 +36,7 @@ Módulos iniciais: identidade/vínculos; alunos; agenda; reservas/presença; WOD
 
 1. Fechar regras de negócio, papéis, privacidade e escopo do MVP.
 2. Estabelecer repositório, documentação, versionamento e CI sem publicação automática.
-3. Modelar tenants e autorização antes de desenvolver operações de domínio.
+3. Modelar autorização antes de desenvolver operações de domínio. Revisão Fase 3: instalação e Auth independentes por box, substituindo tenants compartilhados.
 4. Implementar cadastro, agenda e reserva transacional.
 5. Implementar presença, WOD versionado, resultados e PRs comparáveis.
 6. Acrescentar espera, ranking, indicadores e financeiro conforme prioridades.
@@ -55,3 +55,11 @@ Nenhum login privado, bypass, endpoint privado, análise invasiva ou coleta de d
 ## Pendências
 
 Confirmar fronteiras entre box/rede/unidade, elegibilidade do WOD, faltas, promoção de fila, privacidade de rankings, correção de resultados, financeiro e ambientes. Não há estimativa comercial validada, parecer jurídico, garantia de conformidade ou produto pronto para venda decorrente desta fase.
+
+## Adendo Fase 3 — decisão própria de 16/10/2026
+
+O proprietário aprovou código-base central com instalações independentes: projeto Supabase e implantação Cloudflare próprios, dados e configurações separados por cliente. Não há seletor global de boxes, identidade compartilhada, ranking entre clientes ou serviço central de dados de alunos no escopo aprovado. Histórico, PRs e acompanhamento permanecem locais. RLS por papel e vínculo continua necessária dentro de cada projeto.
+
+A [ADR009](../arquitetura/adr-009-instalacoes-independentes.md) substitui a proposta multi-box compartilhada. Essa decisão não decorre de evidência sobre o Next Fit. F01–F12 mantêm fontes/classificações históricas; F13–F16 são requisitos próprios. Distribuição por versões, configuração e migrações comuns devem evitar forks permanentes.
+
+Esta revisão é documental: não reabriu fontes, não usou REA e não executou testes de aplicação, RLS, backup/restauração, provisionamento ou deploy. Esses testes permanecem NÃO EXECUTADOS. A fronteira principal está decidida; rede/múltiplas unidades exigiria decisão própria antes de entrar no escopo.

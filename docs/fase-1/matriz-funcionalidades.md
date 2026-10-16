@@ -14,15 +14,19 @@ Consolidação em 16/10/2026 da pesquisa documental de 14/10/2026. Legenda e URL
 | F08 | Resultado, ranking e feedback — D | S11; RX/Scaled e desempates H | Comparar prescrições compatíveis; definir empate e consentimento/visibilidade | Não expor notas privadas ou dados de saúde |
 | F09 | Evolução individual — D | S12 | Histórico esportivo separado de notas restritas; teste de autorização por papel | Minimizar dados sensíveis |
 | F10 | Contratos e financeiro — D | S13; integração de cobrança não validada | Controle administrativo inicial; cobrança futura depende de escopo | Restringir valores e inadimplência |
-| F11 | Perfis de colaboradores — D | S14; implementação técnica não auditada | Permissão por operação e vínculo ativo; negar acesso cruzado por API | Isolar tenants e revogar acesso |
+| F11 | Perfis de colaboradores — D | S14; implementação técnica não auditada | Permissão por operação e vínculo ativo na instalação; negar acesso indevido por API | Restringir por papel/vínculo e revogar acesso |
 | F12 | WOD em TV — D | S08; proteção do link H | Prescrição sem dados pessoais; definir expiração/revogação | Não divulgar resultados nominais em link público |
-| F13 | Presença física separada da reserva — P | S06–S07 não comprovam presença física | Chamada ou confirmação autorizada independente da reserva | Frequência limitada ao box e aluno |
-| F14 | Versionamento da prescrição — P | Não confirmado na referência | Resultado aponta para versão imutável executada | Registrar autoria sem dados excessivos |
-| F15 | Isolamento multi-box — P | Não auditado no fornecedor | RLS e relações impedem leitura/escrita entre boxes | Requisito central de separação lógica |
-| F16 | Replicação e operação comercial — P | Objetivo próprio do projeto | Instalação documentada com ambientes e configurações por box | Nenhum dado real em templates ou exemplos |
+| F13 | Presença física separada da reserva — P | S06–S07 não comprovam presença física | Chamada autorizada independente da reserva, dentro da instalação | Frequência limitada ao aluno e profissionais autorizados |
+| F14 | Versionamento da prescrição — P | Não confirmado na referência | Resultado local aponta para versão imutável executada; PR e ranking locais comparáveis | Registrar autoria sem dados excessivos; sem ranking interboxes |
+| F15 | Instalação independente por box — P, decisão aprovada | Proprietário em 16/10/2026; não auditado no fornecedor | Supabase/Auth e Cloudflare próprios; sem seletor global; RLS por papel/vínculo local | Sessões e credenciais de um projeto não concedem acesso ao outro |
+| F16 | Replicação e operação comercial — P | Objetivo próprio e decisão de 16/10/2026 | Reprodução com versão central, configuração por cliente/ambiente, migrações comuns e seed sintético; sem forks permanentes | Nenhum dado real ou credencial em templates; restauração no destino autorizado |
 
 F01–F12 preservam os identificadores do relatório anterior. F13–F16 foram acrescentados nesta consolidação exclusivamente como propostas próprias; não são descobertas confirmadas do Next Fit.
 
 ## Hipóteses em aberto
 
 Não confirmar sem nova evidência: cálculo automático de PR, categorias RX/Scaled nativas, validação de resultados pelo professor, algoritmos de desempate, imutabilidade/versionamento, funcionamento offline, segurança de links TV ou mecanismos internos de autorização. Uma hipótese não pode virar critério de conformidade com o produto de referência; deve ser investigada legitimamente ou decidida como regra própria.
+
+## Rastreabilidade da revisão Fase 3
+
+A [ADR009](../arquitetura/adr-009-instalacoes-independentes.md) supera o desenho compartilhado de F15 sem alterar as evidências históricas F01–F12. F02 usa Auth/convite próprios de cada instalação; F06/F08/F09 permanecem locais, sem agregação entre clientes. P identifica origem própria, não implementação concluída; aprovação arquitetural não equivale a teste executado. Nenhuma fonte externa foi revalidada.

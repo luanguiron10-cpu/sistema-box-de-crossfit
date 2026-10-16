@@ -35,3 +35,9 @@ Este registro consolida o relatório da conversa. As páginas não foram reabert
 Não foram realizados login, teste de reserva, chamada de API privada, análise de binários, decompilação ou inspeção invasiva. Vídeos incorporados não foram tratados como demonstrações assistidas. Não há evidência de isolamento técnico entre clientes, correção de rankings, segurança de links TV, disponibilidade ou desempenho do Next Fit. Percentuais e garantias comerciais não são resultados de testes nossos.
 
 Toda investigação adicional deve registrar data, URL, afirmação suportada e limitações. Conteúdo de terceiros deve ser resumido para requisitos originais; código, mídia, marca e composição visual não devem ser reproduzidos.
+
+## Fonte da decisão Fase 3 — separada da referência
+
+Em 16/10/2026, o proprietário aprovou na conversa código-base central e instalações independentes por box, com Supabase e Cloudflare próprios e sem multi-tenant compartilhado como modelo principal. Registro formal: [ADR009](../arquitetura/adr-009-instalacoes-independentes.md). É decisão interna, não obtida de S01–S14, nem evidência sobre o Next Fit.
+
+Nesta revisão não houve consulta externa, sonda REA, teste de autenticação ou comprovação de isolamento. As classificações D/M/H permanecem históricas, sem confirmação atual. Propostas P podem ser aprovadas sem estarem implementadas ou testadas.
