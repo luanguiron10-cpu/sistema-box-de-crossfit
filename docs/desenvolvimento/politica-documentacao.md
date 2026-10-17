@@ -1,6 +1,6 @@
 # Política permanente de documentação
 
-Status: regra do projeto; aplicação ainda não implementada.
+Status: regra do projeto; Fase 4A inicia fundação frontend demonstrativa. Backend, autenticação e operações persistidas ainda não implementados.
 
 Cada funcionalidade recebe identificador, responsável, versão proposta e documento baseado no [modelo](modelo-funcionalidade.md). O registro acompanha a implementação e sua revisão, com links relativos para decisões, alterações, migrações e evidências.
 

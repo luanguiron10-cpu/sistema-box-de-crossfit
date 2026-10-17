@@ -1,5 +1,15 @@
 # Changelog documental
 
+## Frontend 0.3.0 demonstrativo — 17/10/2026 — Fase 4A
+
+- Início da implementação React/TypeScript/Vite, navegação local e áreas demonstrativas de início, gestor, professor, aluno e configurações.
+- Configuração pública tipada por instalação A/B, identidade visual original e dados sintéticos; sem backend, login ou persistência.
+- Toolchain npm com lockfile, scripts de qualidade, testes automatizados e verificações de navegador registrados em relatórios específicos.
+- Manual Windows e oito registros por funcionalidade; pareceres reais dos cinco agentes e histórico de erros/correções.
+- Critérios finais, resultados e confirmação de envio constam no registro da Fase 4A; esta entrada não antecipa aprovação da auditoria.
+
+Nenhuma migração, projeto Supabase, pagamento, integração ou publicação Cloudflare foi executada. Demonstração não é produto pronto para clientes.
+
 ## 0.2.0-docs — 16/10/2026 — Fase 3
 
 - Decisão do proprietário: código-base central com Supabase/Cloudflare exclusivos por box e ambiente; ADR-009 aceita, substituindo compartilhamento multi-tenant como modelo principal.

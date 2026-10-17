@@ -5,6 +5,7 @@
 - [Integração GitHub](integracao-github.md).
 - [Execução da Fase 2](fase-2.md).
 - [Revisão arquitetural da Fase 3](fase-3.md): decisão aceita, versões anteriores, rastreabilidade e envio.
+- [Fundação frontend Fase 4A](fase-4a.md): implementação demonstrativa, testes e delegações.
 
 Versões dos documentos são independentes da versão futura do produto. Estado `0.1.0-docs` identifica a fundação documental, sem release de software. Registrar alterações por funcionalidade e vincular commits reais quando existirem.
 

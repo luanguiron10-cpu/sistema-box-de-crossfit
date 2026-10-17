@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-17",
+  "checks": [
+    {
+      "name": "B real build branding",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "B configured document title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "B real timezone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "B real units",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "B feature hidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "B feature direct route guarded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "long installation name no overflow 320",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "long installation name no overflow 375",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "long installation name no overflow 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "invalid config boot error",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "invalid config error focused",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "retry valid config recovers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A configured document title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "skiplink focuses main",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "students disabled teacher list hidden",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,419 @@
+{
+  "date": "2026-10-17",
+  "browser": "155.0.8059.82",
+  "base": "http://127.0.0.1:5173",
+  "checks": [
+    {
+      "name": "viewport 320 /",
+      "passed": true,
+      "detail": "{\"width\":320,\"scroll\":320,\"title\":\"Mais conexão. Mais evolução.\",\"images\":true}"
+    },
+    {
+      "name": "local images 320 /",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 320 /gestor",
+      "passed": true,
+      "detail": "{\"width\":320,\"scroll\":320,\"title\":\"Um bom dia para evoluir.\",\"images\":true}"
+    },
+    {
+      "name": "local images 320 /gestor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 320 /professor",
+      "passed": true,
+      "detail": "{\"width\":320,\"scroll\":320,\"title\":\"Pessoas antes dos números.\",\"images\":true}"
+    },
+    {
+      "name": "local images 320 /professor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 320 /aluno",
+      "passed": true,
+      "detail": "{\"width\":320,\"scroll\":320,\"title\":\"Seu ritmo. Suas conquistas.\",\"images\":true}"
+    },
+    {
+      "name": "local images 320 /aluno",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 320 /configuracoes",
+      "passed": true,
+      "detail": "{\"width\":320,\"scroll\":320,\"title\":\"Um box com a sua identidade.\",\"images\":true}"
+    },
+    {
+      "name": "local images 320 /configuracoes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 320 /alunos",
+      "passed": true,
+      "detail": "{\"width\":320,\"scroll\":320,\"title\":\"Alunos do box\",\"images\":true}"
+    },
+    {
+      "name": "local images 320 /alunos",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 320 /turmas",
+      "passed": true,
+      "detail": "{\"width\":320,\"scroll\":320,\"title\":\"Turmas que conectam\",\"images\":true}"
+    },
+    {
+      "name": "local images 320 /turmas",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 320 /wods",
+      "passed": true,
+      "detail": "{\"width\":320,\"scroll\":320,\"title\":\"O treino de hoje\",\"images\":true}"
+    },
+    {
+      "name": "local images 320 /wods",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 320 /resultados",
+      "passed": true,
+      "detail": "{\"width\":320,\"scroll\":320,\"title\":\"Cada conquista tem contexto.\",\"images\":true}"
+    },
+    {
+      "name": "local images 320 /resultados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 320 /nao-existe",
+      "passed": true,
+      "detail": "{\"width\":320,\"scroll\":320,\"title\":\"Página não encontrada\",\"images\":true}"
+    },
+    {
+      "name": "local images 320 /nao-existe",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 375 /",
+      "passed": true,
+      "detail": "{\"width\":375,\"scroll\":375,\"title\":\"Mais conexão. Mais evolução.\",\"images\":true}"
+    },
+    {
+      "name": "local images 375 /",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 375 /gestor",
+      "passed": true,
+      "detail": "{\"width\":375,\"scroll\":375,\"title\":\"Um bom dia para evoluir.\",\"images\":true}"
+    },
+    {
+      "name": "local images 375 /gestor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 375 /professor",
+      "passed": true,
+      "detail": "{\"width\":375,\"scroll\":375,\"title\":\"Pessoas antes dos números.\",\"images\":true}"
+    },
+    {
+      "name": "local images 375 /professor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 375 /aluno",
+      "passed": true,
+      "detail": "{\"width\":375,\"scroll\":375,\"title\":\"Seu ritmo. Suas conquistas.\",\"images\":true}"
+    },
+    {
+      "name": "local images 375 /aluno",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 375 /configuracoes",
+      "passed": true,
+      "detail": "{\"width\":375,\"scroll\":375,\"title\":\"Um box com a sua identidade.\",\"images\":true}"
+    },
+    {
+      "name": "local images 375 /configuracoes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 375 /alunos",
+      "passed": true,
+      "detail": "{\"width\":375,\"scroll\":375,\"title\":\"Alunos do box\",\"images\":true}"
+    },
+    {
+      "name": "local images 375 /alunos",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 375 /turmas",
+      "passed": true,
+      "detail": "{\"width\":375,\"scroll\":375,\"title\":\"Turmas que conectam\",\"images\":true}"
+    },
+    {
+      "name": "local images 375 /turmas",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 375 /wods",
+      "passed": true,
+      "detail": "{\"width\":375,\"scroll\":375,\"title\":\"O treino de hoje\",\"images\":true}"
+    },
+    {
+      "name": "local images 375 /wods",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 375 /resultados",
+      "passed": true,
+      "detail": "{\"width\":375,\"scroll\":375,\"title\":\"Cada conquista tem contexto.\",\"images\":true}"
+    },
+    {
+      "name": "local images 375 /resultados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 375 /nao-existe",
+      "passed": true,
+      "detail": "{\"width\":375,\"scroll\":375,\"title\":\"Página não encontrada\",\"images\":true}"
+    },
+    {
+      "name": "local images 375 /nao-existe",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 768 /",
+      "passed": true,
+      "detail": "{\"width\":768,\"scroll\":768,\"title\":\"Mais conexão. Mais evolução.\",\"images\":true}"
+    },
+    {
+      "name": "local images 768 /",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 768 /gestor",
+      "passed": true,
+      "detail": "{\"width\":768,\"scroll\":768,\"title\":\"Um bom dia para evoluir.\",\"images\":true}"
+    },
+    {
+      "name": "local images 768 /gestor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 768 /professor",
+      "passed": true,
+      "detail": "{\"width\":768,\"scroll\":768,\"title\":\"Pessoas antes dos números.\",\"images\":true}"
+    },
+    {
+      "name": "local images 768 /professor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 768 /aluno",
+      "passed": true,
+      "detail": "{\"width\":768,\"scroll\":768,\"title\":\"Seu ritmo. Suas conquistas.\",\"images\":true}"
+    },
+    {
+      "name": "local images 768 /aluno",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 768 /configuracoes",
+      "passed": true,
+      "detail": "{\"width\":768,\"scroll\":768,\"title\":\"Um box com a sua identidade.\",\"images\":true}"
+    },
+    {
+      "name": "local images 768 /configuracoes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 768 /alunos",
+      "passed": true,
+      "detail": "{\"width\":768,\"scroll\":768,\"title\":\"Alunos do box\",\"images\":true}"
+    },
+    {
+      "name": "local images 768 /alunos",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 768 /turmas",
+      "passed": true,
+      "detail": "{\"width\":768,\"scroll\":768,\"title\":\"Turmas que conectam\",\"images\":true}"
+    },
+    {
+      "name": "local images 768 /turmas",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 768 /wods",
+      "passed": true,
+      "detail": "{\"width\":768,\"scroll\":768,\"title\":\"O treino de hoje\",\"images\":true}"
+    },
+    {
+      "name": "local images 768 /wods",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 768 /resultados",
+      "passed": true,
+      "detail": "{\"width\":768,\"scroll\":768,\"title\":\"Cada conquista tem contexto.\",\"images\":true}"
+    },
+    {
+      "name": "local images 768 /resultados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 768 /nao-existe",
+      "passed": true,
+      "detail": "{\"width\":768,\"scroll\":768,\"title\":\"Página não encontrada\",\"images\":true}"
+    },
+    {
+      "name": "local images 768 /nao-existe",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 1440 /",
+      "passed": true,
+      "detail": "{\"width\":1440,\"scroll\":1440,\"title\":\"Mais conexão. Mais evolução.\",\"images\":true}"
+    },
+    {
+      "name": "local images 1440 /",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 1440 /gestor",
+      "passed": true,
+      "detail": "{\"width\":1440,\"scroll\":1440,\"title\":\"Um bom dia para evoluir.\",\"images\":true}"
+    },
+    {
+      "name": "local images 1440 /gestor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 1440 /professor",
+      "passed": true,
+      "detail": "{\"width\":1440,\"scroll\":1440,\"title\":\"Pessoas antes dos números.\",\"images\":true}"
+    },
+    {
+      "name": "local images 1440 /professor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 1440 /aluno",
+      "passed": true,
+      "detail": "{\"width\":1440,\"scroll\":1440,\"title\":\"Seu ritmo. Suas conquistas.\",\"images\":true}"
+    },
+    {
+      "name": "local images 1440 /aluno",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 1440 /configuracoes",
+      "passed": true,
+      "detail": "{\"width\":1440,\"scroll\":1440,\"title\":\"Um box com a sua identidade.\",\"images\":true}"
+    },
+    {
+      "name": "local images 1440 /configuracoes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 1440 /alunos",
+      "passed": true,
+      "detail": "{\"width\":1440,\"scroll\":1440,\"title\":\"Alunos do box\",\"images\":true}"
+    },
+    {
+      "name": "local images 1440 /alunos",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 1440 /turmas",
+      "passed": true,
+      "detail": "{\"width\":1440,\"scroll\":1440,\"title\":\"Turmas que conectam\",\"images\":true}"
+    },
+    {
+      "name": "local images 1440 /turmas",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 1440 /wods",
+      "passed": true,
+      "detail": "{\"width\":1440,\"scroll\":1440,\"title\":\"O treino de hoje\",\"images\":true}"
+    },
+    {
+      "name": "local images 1440 /wods",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 1440 /resultados",
+      "passed": true,
+      "detail": "{\"width\":1440,\"scroll\":1440,\"title\":\"Cada conquista tem contexto.\",\"images\":true}"
+    },
+    {
+      "name": "local images 1440 /resultados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewport 1440 /nao-existe",
+      "passed": true,
+      "detail": "{\"width\":1440,\"scroll\":1440,\"title\":\"Página não encontrada\",\"images\":true}"
+    },
+    {
+      "name": "local images 1440 /nao-existe",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile menu open",
+      "passed": false,
+      "detail": ""
+    }
+  ],
+  "errors": [
+    "mobile menu open: "
+  ],
+  "externalRequests": [],
+  "screenshots": [
+    "aluno-mobile.png"
+  ]
+}

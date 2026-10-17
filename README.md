@@ -1,16 +1,36 @@
 # CrossFit SaaS — gestão original de boxes
 
-Projeto em fase de documentação e planejamento: alunos, equipe, turmas, reservas, presença, WODs, resultados, PRs e acompanhamento. **Decisão aprovada: código-base central e instalações independentes por box**, cada uma com projeto Supabase e implantação Cloudflare próprios. Não há aplicação executável nem banco implantado neste pacote.
+Fundação web demonstrativa para gestão de boxes: alunos, equipe, turmas, WODs, resultados e acompanhamento. **Código-base central e instalações independentes por box**, conforme ADR-009. A Fase 4A implementa frontend local; não há banco, autenticação real ou persistência de operações de negócio.
 
 ## Estado e destino
 
 - Repositório confirmado pelo proprietário: [luanguiron10-cpu/sistema-box-de-crossfit](https://github.com/luanguiron10-cpu/sistema-box-de-crossfit), privado.
-- Branch desta revisão: `arquitetura/instalacoes-independentes`, derivada de `setup/documentacao-inicial` no commit `01405f2`. Consulte o [registro da Fase 3](docs/historico/fase-3.md).
+- Branch desta implementação: `feature/fase-4a-fundacao-frontend`, derivada de `f368b8ab1b3b1a68618caea3cb2545bf8436276e`. Consulte o [registro da Fase 4A](docs/historico/fase-4a.md); a [Fase 3](docs/historico/fase-3.md) permanece no histórico.
 - A [ADR-009 aceita](docs/arquitetura/adr-009-instalacoes-independentes.md) supera a proposta compartilhada anterior, preservada no histórico Git. Cada ambiente de cada cliente terá seus próprios dados, Auth, Storage, configuração e destino Cloudflare. Nenhum recurso foi provisionado.
-- Frontend responsivo React/TypeScript continua como proposta de implementação; regras físicas e detalhes operacionais precisam de testes futuros.
+- Frontend React/TypeScript/Vite com navegação demonstrativa e configuração pública local. Regras físicas, backend, autenticação, implantação e recuperação de produção precisam de implementação e testes futuros.
 - Comercialização futura por assinatura, implantação personalizada ou licenciamento; escopo, preço e licença ainda dependem de decisão do proprietário.
 
 ## Começar
+
+Requer Node/npm compatíveis com os engines do package.json; ambiente da entrega Node 24.22.0/npm 11.19.1. Na raiz, em PowerShell:
+
+```powershell
+npm.cmd ci
+npm.cmd run dev -- --host 127.0.0.1
+```
+
+Abra a URL local exibida. A aplicação usa apenas dados sintéticos; trocar perfil é prévia visual, sem login. Configurações em tela são voláteis e não são salvas. Nenhuma reserva, presença ou PR é persistido.
+
+```powershell
+npm.cmd run lint
+npm.cmd run typecheck
+npm.cmd test -- --run
+npm.cmd run format:check
+npm.cmd run build
+npm.cmd run preview -- --host 127.0.0.1
+```
+
+Instruções de clonagem limpa, configuração demonstrativa A/B e diagnóstico: [manual Windows](docs/implantacao/frontend-windows.md). A presença de um comando aqui não implica teste aprovado; resultados reais ficam na [auditoria da Fase 4A](docs/testes/auditoria-fase-4a.md).
 
 1. Leia [AGENTS.md](AGENTS.md) e o [índice documental](docs/README.md).
 2. Consulte a [Fase 1](docs/fase-1/relatorio-analise.md), a [arquitetura](docs/arquitetura/README.md) e o [backlog](docs/desenvolvimento/backlog.md).
@@ -45,3 +65,5 @@ Manter uma base de código com releases fixadas por tag/commit. Cada instalaçã
 - [Auditoria da Fase 3](docs/testes/auditoria-fase-3.md).
 
 Os procedimentos acima são planos, sem execução. Banco dedicado não elimina RLS, proteção de notas privadas ou controle de papéis dentro de cada instalação. Modelo principal não usa banco multi-tenant compartilhado, conta universal ou ranking entre boxes.
+
+Na Fase 4A, somente a seleção de configurações **locais demonstrativas** A/B é implementada no frontend; provisionamento, migrations, backups e implantação continuam planos. Ver [arquitetura frontend](docs/arquitetura/fase-4a-frontend.md) e [requisitos da fundação](docs/desenvolvimento/fase-4a-fundacao.md).

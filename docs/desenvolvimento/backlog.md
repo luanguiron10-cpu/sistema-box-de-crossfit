@@ -1,5 +1,9 @@
 # Backlog técnico inicial
 
+## Estado da Fase 4A — 17/10/2026
+
+A fundação frontend demonstrativa executa parte de G01 (aplicação local/toolchain/testes) e apenas apresentação sintética de módulos G04–G10/G13. G01 completo ainda inclui CI e futuras etapas; G02/G03 (banco/Auth), reservas/presença, cálculos PR e demais operações persistidas NÃO estão concluídos. [Evidências da fundação](fase-4a-fundacao.md). As tabelas de propostas abaixo mantêm rastreabilidade histórica; não confundir tela demo com requisito de negócio implementado.
+
 Origem: planejamento da Fase 1 relatado na conversa e consolidado nesta fase. Itens são propostas próprias, sem implementação ou testes de produto executados. P0 compõe o núcleo; P1 complementa operação; P2 representa expansão. Dependências não são evidência de conclusão.
 
 **Linha de base histórica:** a primeira tabela abaixo está superada quanto à topologia compartilhada. O backlog vigente está na seção Revisão Fase 3 — instalações independentes; IDs, prioridades e dependências são preservados.
