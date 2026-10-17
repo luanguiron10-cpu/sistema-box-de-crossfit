@@ -1,0 +1,15 @@
+{
+  "id": "serra-demo",
+  "name": "Serra Training",
+  "tagline": "Evolua no seu ritmo.",
+  "logo": "/assets/serra.svg",
+  "primaryColor": "#22634d",
+  "timezone": "America/Manaus",
+  "units": "lb",
+  "features": {
+    "students": true,
+    "classes": true,
+    "workouts": true,
+    "results": false
+  }
+}

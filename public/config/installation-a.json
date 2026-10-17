@@ -1,0 +1,15 @@
+{
+  "id": "arena-demo",
+  "name": "Arena Box",
+  "tagline": "Movimento que conecta.",
+  "logo": "/assets/arena.svg",
+  "primaryColor": "#ad431e",
+  "timezone": "America/Sao_Paulo",
+  "units": "kg",
+  "features": {
+    "students": true,
+    "classes": true,
+    "workouts": true,
+    "results": true
+  }
+}
