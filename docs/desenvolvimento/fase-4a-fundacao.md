@@ -1,6 +1,6 @@
 # Fase 4A — fundação do frontend
 
-Data: 17/10/2026. Funcionalidade FUND-4A, versão frontend 0.3.0 demonstrativa. Estado inicial: EM IMPLEMENTAÇÃO; conclusão depende da auditoria e dos testes registrados abaixo. A versão documental das fases anteriores é independente da versão do aplicativo.
+Data: 17/10/2026. Funcionalidade FUND-4A, versão frontend 0.3.0 demonstrativa. Estado: CONCLUÍDA no escopo de fundação demonstrativa, após testes, auditoria e confirmação do primeiro envio remoto registrados no histórico. A versão documental das fases anteriores é independente da versão do aplicativo. Isso não conclui os módulos de negócio nem certifica uso em produção.
 
 ## 1. Objetivo e requisitos
 

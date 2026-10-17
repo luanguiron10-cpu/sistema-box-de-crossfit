@@ -59,3 +59,17 @@ Erros, correções e limites: [fundação](../desenvolvimento/fase-4a-fundacao.m
 Demonstração sem autenticação, RLS, API, persistência, operações esportivas reais ou recuperação de dados. Configurações A/B públicas não demonstram isolamento entre projetos Supabase. Instalação em outro computador físico, Android/iOS físicos, Safari, leitor de tela e WCAG integral NÃO EXECUTADOS. Secret scanning e npm audit são parciais/pontuais. Não oferecer este estado a clientes como sistema operacional.
 
 Fase 4B deverá fechar regras de domínio, identidade/acessos locais, modelo físico e estratégia de testes antes de conectar qualquer ambiente autorizado. CI de validação, futuras integrações backend, políticas de atualização e ensaios operacionais continuam etapas próprias; não ativar deploy por consequência do push desta fase.
+
+## Fechamento Git e aceite
+
+Estado final do escopo: **CONCLUÍDA a fundação frontend demonstrativa 0.3.0**. Auditoria favorável e verificações descritas acima; funcionalidades operacionais futuras e verificações explicitamente não executadas permanecem pendentes.
+
+- Commit de implementação: `89cb079` (`feat: implement configurable responsive CrossFit demo frontend`).
+- Commit documental e evidências: `35bbcb634278f2ad183b1b3136b8dd7097350673` (`docs: document frontend foundation tests and five-agent audit`).
+- Push da branch autorizada concluído com sucesso. `git ls-remote` confirmou esse SHA na branch `feature/fase-4a-fundacao-frontend` do origin oficial. Árvore limpa nesse checkpoint.
+- A mesma consulta confirmou a branch de referência `arquitetura/instalacoes-independentes` preservada em `f368b8ab1b3b1a68618caea3cb2545bf8436276e`.
+- Verificador documental de fechamento: PASSOU, 109 arquivos, 59 Markdown, 179 links locais, cinco TOMLs, zero sinais nos padrões limitados de segredos. O número anterior de 175 links corresponde ao checkpoint da auditoria, antes dos links finais do histórico.
+- Diff da base: 58 arquivos adicionados/modificados, sem exclusões. Código/toolchain/assets/configuração e documentação/evidências; AGENTS.md, configurações dos agentes e scripts anteriores preservados. Nenhum comando desta entrega alterou outro repositório.
+- Este adendo será registrado em commit documental próprio; seu SHA final será confirmado após push e informado no relatório de entrega, evitando referência circular ao próprio commit.
+
+Não houve merge, release, migração, alteração Supabase, criação de infraestrutura ou deploy Cloudflare. Instalações A/B são configurações locais sintéticas da mesma aplicação, sem comprovação de isolamento de backend.
