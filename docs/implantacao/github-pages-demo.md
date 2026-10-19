@@ -18,7 +18,7 @@ Alterados Vite, entrada/router, helper e carregamento de configuração, imagens
 
 ## Execução, testes, erros e resultados
 
-Resultados finais serão acrescentados após execução. Validação anterior da Fase 4A não substitui reteste destes ajustes. Ver também [auditoria da publicação](../testes/auditoria-pages-fase-4a.md). A tentativa de habilitação em 17/10 foi impedida por indisponibilidade da revisão automática por limite de uso; nenhuma alteração Pages ocorreu naquela tentativa.
+Entrega publicada e verificada em 19/10/2026. Validação anterior da Fase 4A não substituiu o reteste destes ajustes. Ver também [auditoria da publicação](../testes/auditoria-pages-fase-4a.md). A tentativa de habilitação em 17/10 foi impedida por indisponibilidade da revisão automática por limite de uso; nenhuma alteração Pages ocorreu naquela tentativa.
 
 Em 19/10, API autenticada confirmou repositório `public`, admin:true e Pages inicialmente inexistente. A visibilidade pública já existia: não foi alterada por esta tarefa. A criação Pages com build_type workflow teve sucesso e HTTPS habilitado. Isso não atesta disponibilidade para um repositório privado: GitHub Free suporta repositório público; privado exige plano compatível. Caso o proprietário torne o código privado depois, verificar plano antes, sem tornar público como solução automática. Cloudflare Pages é alternativa sujeita a aprovação, não configurada aqui.
 
@@ -50,3 +50,12 @@ Checks executados pelo desenvolvedor: npm run lint, npm run typecheck, npm run b
 
 
 Reteste final local: PASSOU87/87 asserções no Chrome real headless,375/1440px, nove rotas com acesso direto e reload, imagens, menu, back/forward, skip link, prévia descartada e armazenamento vazio. Zero exceções JS, errosHTTP ou errosconsole. JSON pages-local-results.json e imagens preservados. Auditor independente repetiu36/36 testes com threads1, favorável ao envio/deploy. Validador documental final PASSOU118arquivos/61Markdown/183links, sem sinais nos padrões limitados. Commit/push e testes remotos a seguir ainda não são declarados aprovados neste checkpoint.
+
+Primeiro workflow39250945405, commit c5554a4e0dabd19153fa3286dc7e0f5cce743fa9: npm ci, lint, tipos, npm test padrão Linux, formato e build PASSARAM. Deploy falhou antes de iniciar runner: proteção do environment permitia apenas setup/documentacao-inicial. Corrigida via API adicionando exclusivamente publish/demo-fase-4a à lista customizada, sem remover regras nem alterar visibilidade. Reexecução somente dos jobs falhos solicitada. Para reproduzir do zero: Settings → Environments → github-pages → Deployment branches/tags deve incluir publish/demo-fase-4a, além de Pages Source GitHub Actions.
+
+
+## Resultado público verificado — 19/10/2026
+
+URL testada: https://luanguiron10-cpu.github.io/sistema-box-de-crossfit/ . Workflow39250945405 tentativa2 PASSOU build e deploy para c5554a4e0dabd19153fa3286dc7e0f5cce743fa9. Navegador Chrome remoto PASSOU87/87 asserções375/1440px: nove rotas diretas/reload, menu, voltar/avançar, foco/skip, imagens, preview descartado e storage vazio. Zero exceções JS, erros HTTP e console. Evidências em pages-remote-results.json, pages-workflow-results.json e PNGs pages-remote-375/1440. Imagens locais e mobile remoto inspecionadas visualmente pelo coordenador.
+
+Os testes privados/planos da conta NÃO foram executados: remoto public confirmado novamente. Não houve mudança de visibilidade nem publicação de repositório privado por esta tarefa. Nenhuma etapa manual pendente para Pages atual. Dispositivos físicosAndroid/iOS, Safari/leitor de tela e WCAG integral NÃO EXECUTADOS. Este adendo e evidências serão enviados em commit documental que dispara nova execução automática; o SHA final e sucesso serão confirmados na entrega, sem referência circular ao próprio commit.

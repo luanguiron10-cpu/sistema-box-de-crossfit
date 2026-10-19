@@ -31,3 +31,13 @@ Foi revisada a correção de favicon: `index.html` referencia `%BASE_URL%assets/
 ## Parecer e limites
 
 Parecer **favorável a commit/push e deploy demonstrativo autorizados**, com 36 testes independentes aprovados e revisão estática sem achado impeditivo. A publicação somente poderá ser declarada concluída após workflow bem-sucedido e verificação real do endereço. Neste checkpoint: acesso ao site publicado **NÃO EXECUTADO** por este auditor. Não há comprovação de segurança para operação comercial, autenticação, RLS, dispositivos físicos, Safari ou auditoria WCAG completa.
+
+## Adendo — evidências de publicação verificadas
+
+Este auditor leu e conferiu os arquivos [resultado do workflow](pages-workflow-results.json) e [smoke remoto](pages-remote-results.json), produzidos pelo agente principal. Não executou novamente o navegador nem os comandos de deploy.
+
+- PASSOU na evidência de workflow: execução `39250945405`, tentativa 2, estado `completed`, conclusão `success`, commit `c5554a4e0dabd19153fa3286dc7e0f5cce743fa9`. [Execução no GitHub](https://github.com/luanguiron10-cpu/sistema-box-de-crossfit/actions/runs/39250945405).
+- PASSOU na evidência de acesso real: `https://luanguiron10-cpu.github.io/sistema-box-de-crossfit/`, **87 verificações, zero falhas**, incluindo viewports 375 e 1440, rotas diretas com hash, atualização, imagens, ausência de overflow, prévia descartada e ausência de armazenamento. Os arrays de erros JavaScript, HTTP e console estão vazios. Autoria da execução: agente principal.
+- O primeiro deploy falhou pela política do ambiente `github-pages`, que permitia somente a branch padrão. Segundo relato do principal, a correção adicionou exclusivamente `publish/demo-fase-4a` à allowlist, preservando as demais regras e a visibilidade, seguida de reexecução dos jobs falhos. O sucesso posterior está comprovado no JSON; este auditor não consultou diretamente a API da regra do ambiente.
+
+Parecer final **favorável à entrega demonstrativa publicada**, com base na inspeção independente, 36 testes executados por este auditor e evidências remotas atribuídas ao principal. O próximo commit apenas documental/de evidências disparará outra execução; seu SHA e resultado deverão ser confirmados pelo principal antes do relatório final. Mantêm-se as limitações de plataforma, privacidade pré-existente e ausência de validação para operação real de clientes descritas acima.

@@ -1,0 +1,358 @@
+{
+  "date": "2026-10-19T12:20:06.723Z",
+  "target": "https://luanguiron10-cpu.github.io/sistema-box-de-crossfit/",
+  "checks": [
+    {
+      "name": "375 direct /",
+      "passed": true
+    },
+    {
+      "name": "375 no overflow /",
+      "passed": true
+    },
+    {
+      "name": "375 images /",
+      "passed": true
+    },
+    {
+      "name": "375 reload /",
+      "passed": true
+    },
+    {
+      "name": "375 direct /gestor",
+      "passed": true
+    },
+    {
+      "name": "375 no overflow /gestor",
+      "passed": true
+    },
+    {
+      "name": "375 images /gestor",
+      "passed": true
+    },
+    {
+      "name": "375 reload /gestor",
+      "passed": true
+    },
+    {
+      "name": "375 direct /professor",
+      "passed": true
+    },
+    {
+      "name": "375 no overflow /professor",
+      "passed": true
+    },
+    {
+      "name": "375 images /professor",
+      "passed": true
+    },
+    {
+      "name": "375 reload /professor",
+      "passed": true
+    },
+    {
+      "name": "375 direct /aluno",
+      "passed": true
+    },
+    {
+      "name": "375 no overflow /aluno",
+      "passed": true
+    },
+    {
+      "name": "375 images /aluno",
+      "passed": true
+    },
+    {
+      "name": "375 reload /aluno",
+      "passed": true
+    },
+    {
+      "name": "375 direct /configuracoes",
+      "passed": true
+    },
+    {
+      "name": "375 no overflow /configuracoes",
+      "passed": true
+    },
+    {
+      "name": "375 images /configuracoes",
+      "passed": true
+    },
+    {
+      "name": "375 reload /configuracoes",
+      "passed": true
+    },
+    {
+      "name": "375 direct /alunos",
+      "passed": true
+    },
+    {
+      "name": "375 no overflow /alunos",
+      "passed": true
+    },
+    {
+      "name": "375 images /alunos",
+      "passed": true
+    },
+    {
+      "name": "375 reload /alunos",
+      "passed": true
+    },
+    {
+      "name": "375 direct /turmas",
+      "passed": true
+    },
+    {
+      "name": "375 no overflow /turmas",
+      "passed": true
+    },
+    {
+      "name": "375 images /turmas",
+      "passed": true
+    },
+    {
+      "name": "375 reload /turmas",
+      "passed": true
+    },
+    {
+      "name": "375 direct /wods",
+      "passed": true
+    },
+    {
+      "name": "375 no overflow /wods",
+      "passed": true
+    },
+    {
+      "name": "375 images /wods",
+      "passed": true
+    },
+    {
+      "name": "375 reload /wods",
+      "passed": true
+    },
+    {
+      "name": "375 direct /resultados",
+      "passed": true
+    },
+    {
+      "name": "375 no overflow /resultados",
+      "passed": true
+    },
+    {
+      "name": "375 images /resultados",
+      "passed": true
+    },
+    {
+      "name": "375 reload /resultados",
+      "passed": true
+    },
+    {
+      "name": "375 skip retains hash",
+      "passed": true
+    },
+    {
+      "name": "375 menu navigation",
+      "passed": true
+    },
+    {
+      "name": "375 back",
+      "passed": true
+    },
+    {
+      "name": "375 forward",
+      "passed": true
+    },
+    {
+      "name": "375 preview discarded",
+      "passed": true
+    },
+    {
+      "name": "375 no storage",
+      "passed": true
+    },
+    {
+      "name": "1440 direct /",
+      "passed": true
+    },
+    {
+      "name": "1440 no overflow /",
+      "passed": true
+    },
+    {
+      "name": "1440 images /",
+      "passed": true
+    },
+    {
+      "name": "1440 reload /",
+      "passed": true
+    },
+    {
+      "name": "1440 direct /gestor",
+      "passed": true
+    },
+    {
+      "name": "1440 no overflow /gestor",
+      "passed": true
+    },
+    {
+      "name": "1440 images /gestor",
+      "passed": true
+    },
+    {
+      "name": "1440 reload /gestor",
+      "passed": true
+    },
+    {
+      "name": "1440 direct /professor",
+      "passed": true
+    },
+    {
+      "name": "1440 no overflow /professor",
+      "passed": true
+    },
+    {
+      "name": "1440 images /professor",
+      "passed": true
+    },
+    {
+      "name": "1440 reload /professor",
+      "passed": true
+    },
+    {
+      "name": "1440 direct /aluno",
+      "passed": true
+    },
+    {
+      "name": "1440 no overflow /aluno",
+      "passed": true
+    },
+    {
+      "name": "1440 images /aluno",
+      "passed": true
+    },
+    {
+      "name": "1440 reload /aluno",
+      "passed": true
+    },
+    {
+      "name": "1440 direct /configuracoes",
+      "passed": true
+    },
+    {
+      "name": "1440 no overflow /configuracoes",
+      "passed": true
+    },
+    {
+      "name": "1440 images /configuracoes",
+      "passed": true
+    },
+    {
+      "name": "1440 reload /configuracoes",
+      "passed": true
+    },
+    {
+      "name": "1440 direct /alunos",
+      "passed": true
+    },
+    {
+      "name": "1440 no overflow /alunos",
+      "passed": true
+    },
+    {
+      "name": "1440 images /alunos",
+      "passed": true
+    },
+    {
+      "name": "1440 reload /alunos",
+      "passed": true
+    },
+    {
+      "name": "1440 direct /turmas",
+      "passed": true
+    },
+    {
+      "name": "1440 no overflow /turmas",
+      "passed": true
+    },
+    {
+      "name": "1440 images /turmas",
+      "passed": true
+    },
+    {
+      "name": "1440 reload /turmas",
+      "passed": true
+    },
+    {
+      "name": "1440 direct /wods",
+      "passed": true
+    },
+    {
+      "name": "1440 no overflow /wods",
+      "passed": true
+    },
+    {
+      "name": "1440 images /wods",
+      "passed": true
+    },
+    {
+      "name": "1440 reload /wods",
+      "passed": true
+    },
+    {
+      "name": "1440 direct /resultados",
+      "passed": true
+    },
+    {
+      "name": "1440 no overflow /resultados",
+      "passed": true
+    },
+    {
+      "name": "1440 images /resultados",
+      "passed": true
+    },
+    {
+      "name": "1440 reload /resultados",
+      "passed": true
+    },
+    {
+      "name": "1440 skip retains hash",
+      "passed": true
+    },
+    {
+      "name": "1440 menu navigation",
+      "passed": true
+    },
+    {
+      "name": "1440 back",
+      "passed": true
+    },
+    {
+      "name": "1440 forward",
+      "passed": true
+    },
+    {
+      "name": "1440 preview discarded",
+      "passed": true
+    },
+    {
+      "name": "1440 no storage",
+      "passed": true
+    },
+    {
+      "name": "no JS errors",
+      "passed": true
+    },
+    {
+      "name": "no HTTP errors",
+      "passed": true
+    },
+    {
+      "name": "no console errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "httpErrors": [],
+  "consoleErrors": [],
+  "url": "https://luanguiron10-cpu.github.io/sistema-box-de-crossfit/"
+}
