@@ -30,3 +30,6 @@ Não houve implementação, provisionamento, execução de migração, alteraç�
 - Envio confirmado da branch `setup/documentacao-inicial` ao repositório privado autorizado; comprovante e SHA verificado no registro de integração.
 
 Não houve implementação de app, execução de migração, alteração Supabase ou publicação Cloudflare. Testes futuros permanecem NÃO EXECUTADOS.
+
+## PUB-4A — 19/10/2026
+Adaptação da demonstração 0.3.0 para GitHub Pages: base de projeto, rotas hash, caminhos públicos e workflow oficial. Resultado de execução no registro de publicação; sem backend ou Fase 4B.

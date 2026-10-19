@@ -1,6 +1,6 @@
 import { render, screen, within, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { MemoryRouter } from "react-router-dom";
+import { HashRouter, MemoryRouter } from "react-router-dom";
 import { describe, expect, it, vi } from "vitest";
 import a from "../../public/config/installation-a.json";
 import b from "../../public/config/installation-b.json";
@@ -17,6 +17,32 @@ function start(path = "/", config: unknown = a) {
   );
 }
 describe("fundação navegável", () => {
+  it("preserva a rota hash ao pular para o conteúdo e navegar", async () => {
+    window.history.replaceState(null, "", "/sistema-box-de-crossfit/#/gestor");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({ ok: true, json: async () => a }),
+    );
+    try {
+      render(
+        <HashRouter>
+          <App />
+        </HashRouter>,
+      );
+      await screen.findByRole("heading", { name: "Um bom dia para evoluir." });
+      await userEvent.click(
+        screen.getByRole("link", { name: "Pular para o conteúdo" }),
+      );
+      expect(screen.getByRole("main")).toHaveFocus();
+      expect(window.location.hash).toBe("#/gestor");
+      await userEvent.click(
+        screen.getByRole("link", { name: /Área do aluno/ }),
+      );
+      await waitFor(() => expect(window.location.hash).toBe("#/aluno"));
+    } finally {
+      window.history.replaceState(null, "", "/");
+    }
+  });
   it("identifica a instalação ativa no título sem acoplar a marca ao HTML", async () => {
     const initial = start("/", a);
     await waitFor(() =>

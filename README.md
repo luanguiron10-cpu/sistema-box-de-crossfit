@@ -67,3 +67,5 @@ Manter uma base de código com releases fixadas por tag/commit. Cada instalaçã
 Os procedimentos acima são planos, sem execução. Banco dedicado não elimina RLS, proteção de notas privadas ou controle de papéis dentro de cada instalação. Modelo principal não usa banco multi-tenant compartilhado, conta universal ou ranking entre boxes.
 
 Na Fase 4A, somente a seleção de configurações **locais demonstrativas** A/B é implementada no frontend; provisionamento, migrations, backups e implantação continuam planos. Ver [arquitetura frontend](docs/arquitetura/fase-4a-frontend.md) e [requisitos da fundação](docs/desenvolvimento/fase-4a-fundacao.md).
+
+Publicação da demonstração: procedimento, atualização e reversão em [GitHub Pages](docs/implantacao/github-pages-demo.md). Branch dedicada: publish/demo-fase-4a; rotas usam #/.

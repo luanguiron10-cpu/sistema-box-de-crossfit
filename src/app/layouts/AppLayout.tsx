@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { useInstallation } from "../providers/InstallationProvider";
 import { version } from "../../../package.json";
+import { publicPath } from "../../config/publicPath";
 export function AppLayout() {
   const c = useInstallation();
   useEffect(() => {
@@ -53,7 +54,14 @@ export function AppLayout() {
       }}
       style={{ "--accent": c.primaryColor } as React.CSSProperties}
     >
-      <a className="skip-link" href="#main-content">
+      <a
+        className="skip-link"
+        href="#main-content"
+        onClick={(event) => {
+          event.preventDefault();
+          document.getElementById("main-content")?.focus();
+        }}
+      >
         Pular para o conteúdo
       </a>
       <aside
@@ -67,7 +75,7 @@ export function AppLayout() {
         }}
       >
         <Link to="/" className="brand" onClick={() => setOpen(false)}>
-          <img src={c.logo} width="44" height="44" alt="" />
+          <img src={publicPath(c.logo)} width="44" height="44" alt="" />
           <div>
             <strong>{c.name}</strong>
             <span>GESTÃO EM MOVIMENTO</span>

@@ -1,4 +1,5 @@
 import type { Feature, InstallationConfig } from "../types/installation";
+import { publicPath } from "./publicPath";
 
 export const featureKeys: Feature[] = [
   "students",
@@ -88,7 +89,7 @@ export function configPath(
   return path;
 }
 export async function loadConfig(): Promise<InstallationConfig> {
-  const response = await fetch(configPath(), { cache: "no-store" });
+  const response = await fetch(publicPath(configPath()), { cache: "no-store" });
   if (!response.ok)
     throw new Error("Não foi possível carregar a configuração local.");
   return validateConfig(await response.json());

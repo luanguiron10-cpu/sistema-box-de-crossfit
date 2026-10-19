@@ -3,6 +3,7 @@ import { useInstallation } from "../../app/providers/InstallationProvider";
 import { PageHeading, Panel } from "../../components/ui/Primitives";
 import { validateConfig } from "../../config/installation";
 import { version } from "../../../package.json";
+import { publicPath } from "../../config/publicPath";
 export function SettingsPage() {
   const config = useInstallation();
   const [name, setName] = useState(config.name);
@@ -82,7 +83,7 @@ export function SettingsPage() {
               className="brand-preview"
               style={{ borderColor: error ? config.primaryColor : color }}
             >
-              <img src={logo} alt="" width="64" height="64" />
+              <img src={publicPath(logo)} alt="" width="64" height="64" />
               <h2>{name.trim() || "Nome do box"}</h2>
               <p>{config.tagline}</p>
               <span

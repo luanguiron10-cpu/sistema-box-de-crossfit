@@ -22,3 +22,5 @@ Fase 3: [checklist novo box](implantacao/checklist-novo-box.md), [distribuição
 Fase 4A: [fundação e oito registros](desenvolvimento/fase-4a-fundacao.md), [arquitetura frontend](arquitetura/fase-4a-frontend.md), [manual Windows](implantacao/frontend-windows.md), [navegador](testes/fase-4a-browser.md), [auditoria](testes/auditoria-fase-4a.md) e [histórico](historico/fase-4a.md).
 
 Documentos legados preservados: [plano](plano-de-acao.md) e [roteiro](roteiro-de-testes.md). Nenhum documento novo deve apagar evidência anterior; correções precisam indicar a conclusão substituída e o motivo.
+
+Continuação Fase 4A: [publicação da demonstração GitHub Pages](implantacao/github-pages-demo.md).
